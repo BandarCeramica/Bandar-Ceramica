@@ -102,6 +102,7 @@ body {
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 .logo {
-  max-width: 150px;   /* adjust to the size you want */
-  height: auto;       /* keeps proportions correct */
+  max-width: 140px;
+  height: auto;
+  display: block;
 }

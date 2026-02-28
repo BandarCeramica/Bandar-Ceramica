@@ -90,3 +90,14 @@ body {
   max-height: 80%;
   border: 5px solid #d4af37; /* gold border */
 }
+.product-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  width: 220px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}

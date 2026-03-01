@@ -1,23 +1,18 @@
-// Toggle mobile menu
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
+  // Mobile menu toggle
   const menuToggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector("nav ul");
+  menuToggle.addEventListener("click", () => {
+    nav.classList.toggle("open");
+  });
 
-  if (menuToggle) {
-    menuToggle.addEventListener("click", () => {
-      nav.classList.toggle("open");
-    });
-  }
-
-  // Hero banner text animation
+  // Hero text animation
   const heroText = document.querySelector(".hero-text");
-  if (heroText) {
-    heroText.style.opacity = 0;
-    setTimeout(() => {
-      heroText.style.transition = "opacity 2s ease-in";
-      heroText.style.opacity = 1;
-    }, 500);
-  }
+  heroText.style.opacity = 0;
+  setTimeout(() => {
+    heroText.style.transition = "opacity 2s ease-in";
+    heroText.style.opacity = 1;
+  }, 500);
 
   // Lightbox for product images
   const productImages = document.querySelectorAll(".product-card img");
@@ -39,5 +34,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
   lightbox.addEventListener("click", () => {
     lightbox.classList.remove("active");
+  });
+
+  // Simple cart system
+  const cart = [];
+  const buttons = document.querySelectorAll(".add-to-cart");
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const product = btn.parentElement.querySelector("h3").textContent;
+      cart.push(product);
+      alert(`${product} added to cart!`);
+    });
   });
 });
